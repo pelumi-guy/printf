@@ -1,0 +1,4 @@
+#ignore main.c and test executables
+main.c
+test
+Task*
