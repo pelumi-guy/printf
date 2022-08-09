@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 
-	/* printf("\n----------------------------------\nPrinted: %d\n", printed); */
+	/* printf("----------------------------------\nPrinted: %d\n", printed);*/
 
 	return (printed);
 }
