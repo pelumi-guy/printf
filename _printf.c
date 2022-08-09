@@ -11,8 +11,8 @@ int _printf(const char *format, ...)
 {
 	int i, printed = 0;
 	va_list args;
-	
-	va_start (args, format);
+
+	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
@@ -21,13 +21,13 @@ int _printf(const char *format, ...)
 			i++;
 			continue;
 		}
-		
+
 		_putchar(format[i]);
 		printed++;
 	}
-	va_end (args);
-	
+	va_end(args);
+
 	/* printf("\n----------------------------------\nPrinted: %d\n", printed); */
-	
+
 	return (printed);
 }
