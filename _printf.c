@@ -28,5 +28,6 @@ int _printf(const char *format, ...)
 	va_end(args);
 
 	/* printf("----------------------------------\nPrinted: %d\n", printed);*/
+
 	return (printed);
 }

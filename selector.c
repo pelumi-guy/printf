@@ -16,6 +16,7 @@ int (*selector(char s))(va_list args)
 		{'%', print_modulus},
 		{'d', print_number},
 		{'i', print_number},
+		{'b', print_binary},
 		{'\0', NULL}
 	};
 
