@@ -25,5 +25,6 @@ int print_string(va_list args);
 int print_modulus(va_list args);
 int print_number(va_list args);
 int print_binary(va_list args);
+int print_rev(va_list args);
 
 #endif /* MAIN_H */
