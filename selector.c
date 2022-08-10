@@ -17,6 +17,7 @@ int (*selector(char s))(va_list args)
 		{"d", print_number},
 		{"i", print_number},
 		{"b", print_binary},
+		{"r", print_rev},
 		{NULL, NULL}
 	};
 
