@@ -49,13 +49,19 @@ int recursivePrintNum(int num)
 int print_number(va_list args)
 {
 	int argNum = (va_arg(args, int));
-	int num, len = 0;
+	unsigned int num;
+	int len = 0;
 
 	if (argNum < 0)
 	{
 		num = -argNum;
 		_putchar('-');
 		len++;
+	}
+	else if (argNum == 0)
+	{
+		_putchar('0');
+		return (1);
 	}
 	else
 	{
