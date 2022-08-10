@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 {
 	int i, printed = 0;
 	va_list args;
+	int (*func)(va_list) = NULL;
 
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
@@ -21,17 +22,29 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			printed += selector(format[i + 1])(args);
-			i++;
-			continue;
+			func = selector(format[i + 1]);
+			if (format[i + 1] == '\0')
+			{
+				return (-1);
+			}
+			else if (func == NULL)
+			{
+				_putchar(format[i]);
+				_putchar(format[i + 1]);
+				printed += 2;
+				i++;
+				continue;
+			}
+			else
+			{
+				printed += selector(format[i + 1])(args);
+				i++;
+				continue;
+			}
 		}
-
 		_putchar(format[i]);
 		printed++;
 	}
 	va_end(args);
-
-	/* printf("----------------------------------\nPrinted: %d\n", printed);*/
-
 	return (printed);
 }

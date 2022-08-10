@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -15,7 +16,7 @@ int _printf(const char *format, ...);
  **/
 typedef struct op
 {
-	char op;
+	char *op;
 	int (*f)(va_list args);
 } op_t;
 int (*selector(char s))(va_list args);
