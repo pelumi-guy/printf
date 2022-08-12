@@ -18,6 +18,10 @@ int (*selector(char s))(va_list args)
 		{"i", print_number},
 		{"b", print_binary},
 		{"r", print_rev},
+		{"x", print_x},
+		{"X", print_X},
+		{"u", print_u},
+		{"R", rot13},
 		{NULL, NULL}
 	};
 
